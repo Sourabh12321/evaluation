@@ -9,11 +9,14 @@ const cors = require("cors");
 
 
 const app = express();
+
 app.use(express.json());
-app.get("/",(req,res)=>{
-    res.send("home page");
-})
 app.use(cors());
+
+app.get("/",(req,res)=>{
+    res.send("home page of website");
+})
+
 
 app.use("/users",userRouter);
 app.use(authenticate);
